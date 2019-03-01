@@ -47,7 +47,7 @@ y_ = tf.placeholder(tf.float32,[None,10])
 cross_entropy = tf.reduce_mean(-tf.reduce_sum(y_ * tf.log(y),reduction_indices = [1]))
 
 # 选择自适应优化器Adagrad，并把学习速率设置为0.3
-train_step = tf.train.AdagradOptimizer(0,3).minimize(cross_entropy)
+train_step = tf.train.AdagradOptimizer(0.3).minimize(cross_entropy)
 
 ########训练步骤########
 # 使用TensorFlow的全局参数初始化器
