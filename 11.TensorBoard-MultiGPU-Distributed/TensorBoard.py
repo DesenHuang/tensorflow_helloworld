@@ -19,11 +19,11 @@ sess = tf.InteractiveSession() # 创建tensorflow默认的session
 
 
 #----------------------------------------------------------------------------
-  # Input placeholders
-  '''
-  为了在tensorboard中展示节点名称，设计网络时使用with tf.name_scope限定命名空间，
-  在这个with的所有节点都会被自动命名为input/xxx这样的格式。
-  '''
+# Input placeholders
+'''
+为了在tensorboard中展示节点名称，设计网络时使用with tf.name_scope限定命名空间，
+在这个with的所有节点都会被自动命名为input/xxx这样的格式。
+'''
 with tf.name_scope('input'):
   x = tf.placeholder(tf.float32, [None, 784], name='x-input')
   y_ = tf.placeholder(tf.float32, [None, 10], name='y-input')
@@ -171,8 +171,10 @@ test_writer.close()
 进入命令行：
 # 执行tensorboard程序，指定tansorflow日志路径
 $ tensorboard --logdir = /tmp/tensorflow/mnist/logs/mnist_with_summaries
+# "=" in the last command is a bug in tf__version__=1.12.0, just neglect it is ok
 # 执行上面之后会出现一条提示信息，复制其中网址到浏览器，就可以看到数据的可视化的图标了
 '''
+#Note that the browser should substitue the ip address
 
 
 
