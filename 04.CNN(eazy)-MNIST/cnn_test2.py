@@ -83,6 +83,7 @@ with tf.Session() as sess:
     plt.title('filter0')
     plt.show()
     savefig('./filter0.jpg')
+    # visualize the weight of conv1 for each channel.
     fig2,ax2 = plt.subplots(nrows=1, ncols=32, figsize = (32,1))	
     for i in range(31):
         ax2[i].set_xticks([])
@@ -95,6 +96,7 @@ with tf.Session() as sess:
     plt.colorbar(gci)
     plt.show()
     savefig('./feature_map_t.jpg')
+    #visualize the conv1_result of each channel for one sample.
     fig3,ax3 = plt.subplots(nrows=1, ncols=32, figsize = (32,1))	
     for i in range(31):
         ax3[i].set_xticks([])
@@ -107,6 +109,7 @@ with tf.Session() as sess:
     plt.colorbar(gci)
     plt.show()
     savefig('./feature_map_n.jpg')
+    #visualize the first channel of conv1_result for a 32 samples.
     print("prediction:",sess.run(out,feed_dict={x:mnist.test.images[:1],
                                                            y:mnist.test.labels[:1],
                                                            keep_prob:1.}))
